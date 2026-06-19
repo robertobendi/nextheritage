@@ -93,6 +93,24 @@ return [
         ],
     ],
 
+    // Branded 404. Routed as a list page so /404 answers HTTP 200 and the
+    // static crawler captures a real, image-bearing error page (the export's
+    // hardened fallback ships no <img>). GitHub Pages still serves it for
+    // genuine misses via docs/404.html.
+    'errore' => [
+        'label'          => 'Pagina 404',
+        'label_singular' => 'Pagina 404',
+        'icon'           => 'alert-triangle',
+        'route'          => '/404/{slug}',
+        'template'       => 'page.twig',
+        'list_template'  => '404.twig',
+        'order_by'       => 'updated_at DESC',
+        'fields' => [
+            'title' => ['type' => 'text', 'required' => true, 'label' => 'Titolo'],
+            'slug'  => ['type' => 'slug', 'required' => true, 'label' => 'Slug'],
+        ],
+    ],
+
     // Public submission endpoints kept for the admin; the static site posts to
     // Formspree (see templates), so these mirror the form fields for reference.
     'richiesta_socio' => [
