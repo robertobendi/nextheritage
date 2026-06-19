@@ -1,0 +1,23 @@
+{
+  "logo": null,
+  "favicon": {
+    "source": "source/images/favicon.ico",
+    "uploaded": "uploads/favicon.ico",
+    "url": "/uploads/favicon.ico",
+    "role": "favicon",
+    "width": null,
+    "height": null,
+    "note": "set as <link rel=\"icon\"> in <head>"
+  },
+  "photos": [
+    {
+      "source": "source/images/img-00.png",
+      "uploaded": "uploads/img-00.png",
+      "url": "/uploads/img-00.png",
+      "role": "photo",
+      "width": 408,
+      "height": 612,
+      "note": "real source photo — place per BRIEF.md imagery plan"
+    }
+  ]
+}
