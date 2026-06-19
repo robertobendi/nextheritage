@@ -1,18 +1,17 @@
-{% import "@theme/_macros.twig" as ui %}<!doctype html>
+<!doctype html>
 <html lang="it">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    {% block meta %}
-        <meta name="description" content="{% block description %}Next Heritage — associazione ticinese che porta le nuove generazioni al volante delle auto storiche. Born 2 Late 4 Classic.{% endblock %}">
-    {% endblock %}
-    <meta name="theme-color" content="#c1272d">
+    <title>Diventa socio — Next Heritage</title>
+            <meta name="description" content="Unisciti a Next Heritage come socio o sostenitore e contribuisci a portare le nuove generazioni al volante delle auto storiche in Ticino.">
+        <meta name="theme-color" content="#c1272d">
     <link rel="icon" href="/uploads/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    {% block head %}{% endblock %}
+        <meta property="og:title" content="Diventa socio — Next Heritage">
+    <meta property="og:description" content="Socio o sostenitore: scegli come far parte della comunità Young4Vintage del Ticino.">
     <style>
         :root {
             /* Palette — BRIEF § 3 */
@@ -429,11 +428,11 @@
             </a>
             <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
             <nav id="primary-nav" class="primary-nav" aria-label="Navigazione principale">
-                <a href="/eventi"{% if active == 'eventi' %} aria-current="page"{% endif %}>Eventi</a>
-                <a href="/missione"{% if active == 'missione' %} aria-current="page"{% endif %}>Missione</a>
+                <a href="/eventi">Eventi</a>
+                <a href="/missione">Missione</a>
                 <a href="/missione#galleria">Galleria</a>
-                <a href="/contatti"{% if active == 'contatti' %} aria-current="page"{% endif %}>Contatti</a>
-                <a class="nav-cta" href="/diventa-socio"{% if active == 'socio' %} aria-current="page"{% endif %}>Diventa socio</a>
+                <a href="/contatti">Contatti</a>
+                <a class="nav-cta" href="/diventa-socio" aria-current="page">Diventa socio</a>
                 <span class="lang" title="Sito in italiano · altre lingue presto disponibili" aria-label="Lingua: Italiano">
                     <b>IT</b><span>EN</span><span>FR</span><span>DE</span>
                 </span>
@@ -442,7 +441,95 @@
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        <section class="section--sm">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Unisciti alla comunità</p>
+            <div class="bleed">
+                <h1 class="bleed__h">Diventa <span class="accent-word">socio</span></h1>
+            </div>
+            <p class="hero-sub" style="margin-top:0;">Unisciti al nostro gruppo, diventa socio e contribuisci a preservare il patrimonio culturale del futuro — guidando la storia con noi.</p>
+        </div>
+        <figure class="tilt-r" style="margin:0;">
+            <div class="frame frame--photo" style="aspect-ratio:16/9;">
+                <span class="duo duo--red"><img src="/uploads/steering.jpg" alt="Volante e cruscotto di un'auto d'epoca, dettaglio cromato" width="640" height="360" loading="lazy"></span>
+            </div>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow">Due modi per esserci</p>
+        <h2 style="margin-bottom:2.5rem;">Scegli il tuo ruolo</h2>
+        <div class="two-col">
+            <article class="frame benefit-card">
+                <div class="card-body">
+                    <p class="eyebrow">Al volante</p>
+                    <h3>Socio</h3>
+                    <p class="price-note">Per chi vuole partecipare</p>
+                    <ul class="benefit-list">
+                        <li>Accesso agli eventi e ai rally 2026</li>
+                        <li>Posti negli equipaggi e nel Progetto Giovani</li>
+                        <li>Parte attiva della comunità Young4Vintage</li>
+                        <li>Aggiornamenti su programmi e iscrizioni</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="frame benefit-card">
+                <div class="card-body">
+                    <p class="eyebrow">Al fianco</p>
+                    <h3>Sostenitore</h3>
+                    <p class="price-note">Per chi vuole sostenere</p>
+                    <ul class="benefit-list">
+                        <li>Sostieni la missione di Next Heritage</li>
+                        <li>Aiuti a costruire il legame tra passato e presente</li>
+                        <li>Riconoscimento come sostenitore dell'iniziativa</li>
+                        <li>Inviti agli appuntamenti dell'associazione</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Richiesta di adesione</p>
+            <h2>Compila e invia</h2>
+            <p class="lede-block" style="margin-top:1rem;">Raccontaci chi sei e come vuoi partecipare. Ti ricontattiamo via e-mail con tutti i dettagli per l'adesione.</p>
+            <p class="swiss-line"><svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg> Membri della Federazione Svizzera dei Veicoli Storici</p>
+        </div>
+        <div class="frame" style="background:var(--crema);">
+            <div class="card-body">
+                <!-- TODO: replace REPLACE_ME with the real Formspree form ID; or swap to mailto:info@nextheritage.ch [verify] -->
+                <form class="form-grid" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                    <div class="form-row">
+                        <label class="field"><span>Nome</span><input name="nome" type="text" autocomplete="given-name" required></label>
+                        <label class="field"><span>Cognome</span><input name="cognome" type="text" autocomplete="family-name"></label>
+                    </div>
+                    <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+                    <label class="field"><span>Ruolo</span>
+                        <select name="ruolo">
+                            <option value="Socio">Socio — voglio partecipare</option>
+                            <option value="Sostenitore">Sostenitore — voglio sostenere</option>
+                        </select>
+                    </label>
+                    <label class="field"><span>Messaggio</span><textarea name="messaggio" placeholder="Parlaci della tua passione per le auto storiche…"></textarea></label>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button class="btn btn--primary" type="submit">Invia richiesta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--sm">
+    <div class="wrap center-row">
+        <p class="swiss-line"><svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg> I tuoi dati restano tra noi — niente spam, solo Next Heritage.</p>
+    </div>
+</section>
     </main>
 
     <footer class="site-footer">
@@ -483,7 +570,7 @@
                 <div>
                     <h4>Federazione</h4>
                     <p class="swiss-line" style="color:var(--crema);">
-                        {{ ui.swiss_chip() }}
+                        <svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg>
                         Federazione Svizzera<br>dei Veicoli Storici
                     </p>
                     <p style="font-family:var(--font-accent); font-size:.9375rem; margin-top:.6rem;">Young4Vintage · Ticino</p>
@@ -491,7 +578,7 @@
                 </div>
             </div>
             <div class="footer-base">
-                <span>© {{ "now"|date('Y') }} Next Heritage · Ticino, Svizzera</span>
+                <span>© 2026 Next Heritage · Ticino, Svizzera</span>
                 <span><b style="color:var(--ottone);">IT</b> · EN · FR · DE</span>
             </div>
         </div>

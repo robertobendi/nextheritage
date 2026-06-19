@@ -1,18 +1,17 @@
-{% import "@theme/_macros.twig" as ui %}<!doctype html>
+<!doctype html>
 <html lang="it">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    {% block meta %}
-        <meta name="description" content="{% block description %}Next Heritage — associazione ticinese che porta le nuove generazioni al volante delle auto storiche. Born 2 Late 4 Classic.{% endblock %}">
-    {% endblock %}
-    <meta name="theme-color" content="#c1272d">
+    <title>Contatti — Next Heritage</title>
+            <meta name="description" content="Scrivi a Next Heritage per partecipare agli eventi, diventare socio o ricevere informazioni sul motorismo storico in Ticino. info@nextheritage.ch.">
+        <meta name="theme-color" content="#c1272d">
     <link rel="icon" href="/uploads/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    {% block head %}{% endblock %}
+        <meta property="og:title" content="Contatti — Next Heritage">
+    <meta property="og:description" content="Apri una linea con l'associazione ticinese Young4Vintage. Scrivici via e-mail.">
     <style>
         :root {
             /* Palette — BRIEF § 3 */
@@ -429,11 +428,11 @@
             </a>
             <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
             <nav id="primary-nav" class="primary-nav" aria-label="Navigazione principale">
-                <a href="/eventi"{% if active == 'eventi' %} aria-current="page"{% endif %}>Eventi</a>
-                <a href="/missione"{% if active == 'missione' %} aria-current="page"{% endif %}>Missione</a>
+                <a href="/eventi">Eventi</a>
+                <a href="/missione">Missione</a>
                 <a href="/missione#galleria">Galleria</a>
-                <a href="/contatti"{% if active == 'contatti' %} aria-current="page"{% endif %}>Contatti</a>
-                <a class="nav-cta" href="/diventa-socio"{% if active == 'socio' %} aria-current="page"{% endif %}>Diventa socio</a>
+                <a href="/contatti" aria-current="page">Contatti</a>
+                <a class="nav-cta" href="/diventa-socio">Diventa socio</a>
                 <span class="lang" title="Sito in italiano · altre lingue presto disponibili" aria-label="Lingua: Italiano">
                     <b>IT</b><span>EN</span><span>FR</span><span>DE</span>
                 </span>
@@ -442,7 +441,57 @@
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        <section class="section--sm">
+    <div class="wrap">
+        <p class="eyebrow">Parla con noi</p>
+        <div class="bleed">
+            <h1 class="bleed__h"><span class="accent-word">Contatti</span></h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap intent">
+        <div class="lede-block">
+            <p class="eyebrow">Scrivici</p>
+            <h2 style="margin-bottom:1rem;">Vieni a guidare con noi</h2>
+            <p>I nostri eventi accolgono appassionati e curiosi, offrendo momenti di scoperta e condivisione nel mondo dei veicoli storici. Per maggiori informazioni, per iscriverti o per partecipare al Progetto Giovani, non esitare a contattarci.</p>
+            <p style="margin-top:1.5rem;">
+                <a class="text-link" href="mailto:info@nextheritage.ch">info@nextheritage.ch</a>
+                <!-- [verify] no public phone/email captured from source; domain-derived address used per BRIEF -->
+            </p>
+            <p class="swiss-line" style="margin-top:1.5rem;"><svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg> Ticino, Svizzera · Young4Vintage</p>
+        </div>
+        <div class="frame" style="background:var(--crema);">
+            <div class="card-body">
+                <!-- TODO: replace REPLACE_ME with the real Formspree form ID; or swap to mailto:info@nextheritage.ch [verify] -->
+                <form class="form-grid" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                    <label class="field"><span>Nome</span><input name="name" type="text" autocomplete="name" required></label>
+                    <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+                    <label class="field"><span>Messaggio</span><textarea name="message" placeholder="Come possiamo aiutarti?" required></textarea></label>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button class="btn btn--primary" type="submit">Invia</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Dove corriamo</p>
+            <h2>Il Ticino delle auto storiche</h2>
+            <p class="lede-block" style="margin-top:1rem;">Dal Gottardo al Ceresio, da Lugano a Locarno: le nostre strade sono il palcoscenico naturale del motorismo d'epoca. Lugano, Ascona, Giubiasco e Campione d'Italia.</p>
+            <p class="swiss-line"><svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg> Federazione Svizzera dei Veicoli Storici</p>
+        </div>
+        <figure class="tilt-l" style="margin:0;">
+            <div class="frame frame--photo" style="aspect-ratio:16/9;">
+                <span class="duo duo--green"><img src="/uploads/ceresio.jpg" alt="Veduta storica del Lago di Lugano, Ceresio, Ticino" width="640" height="360" loading="lazy"></span>
+            </div>
+        </figure>
+    </div>
+</section>
     </main>
 
     <footer class="site-footer">
@@ -483,7 +532,7 @@
                 <div>
                     <h4>Federazione</h4>
                     <p class="swiss-line" style="color:var(--crema);">
-                        {{ ui.swiss_chip() }}
+                        <svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg>
                         Federazione Svizzera<br>dei Veicoli Storici
                     </p>
                     <p style="font-family:var(--font-accent); font-size:.9375rem; margin-top:.6rem;">Young4Vintage · Ticino</p>
@@ -491,7 +540,7 @@
                 </div>
             </div>
             <div class="footer-base">
-                <span>© {{ "now"|date('Y') }} Next Heritage · Ticino, Svizzera</span>
+                <span>© 2026 Next Heritage · Ticino, Svizzera</span>
                 <span><b style="color:var(--ottone);">IT</b> · EN · FR · DE</span>
             </div>
         </div>

@@ -1,0 +1,109 @@
+{% extends '@theme/layout.twig' %}
+{% import "@theme/_macros.twig" as ui %}
+{% set active = 'missione' %}
+
+{% block title %}Missione — Un ponte tra generazioni · Next Heritage{% endblock %}
+{% block description %}La missione di Next Heritage: trasmettere la passione per le auto storiche dalle vecchie alle nuove generazioni in Ticino, con la Federazione Svizzera dei Veicoli Storici.{% endblock %}
+{% block head %}
+    <meta property="og:title" content="Missione — Un ponte tra generazioni">
+    <meta property="og:description" content="Trasmettere la passione per i veicoli storici alle nuove generazioni, evento dopo evento.">
+{% endblock %}
+
+{% block content %}
+<section class="section--sm">
+    <div class="wrap">
+        <p class="eyebrow">Chi siamo · Young4Vintage</p>
+        <div class="bleed">
+            <h1 class="bleed__h">Un ponte tra <span class="accent-word">generazioni</span></h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap cols-media">
+        <div class="lede-block">
+            <p style="font-size:1.1875rem;">Ogni generazione eredita un patrimonio di conoscenze, valori e passioni che acquista significato solo quando viene condiviso. La vera eredità non consiste nel conservare ciò che abbiamo ricevuto, ma nel renderlo vivo per chi verrà dopo di noi.</p>
+            <p>Favorire l'incontro tra esperienza e innovazione significa creare un dialogo capace di trasformare la memoria in opportunità: così le nuove generazioni possono comprendere, valorizzare e reinterpretare il patrimonio del motorismo con uno sguardo rivolto al futuro.</p>
+        </div>
+        <figure class="tilt-r" style="margin:0;">
+            <div class="frame frame--photo" style="aspect-ratio:4/3;">
+                <img src="/uploads/alfa-front.jpg" alt="Alfa Romeo 6C 2500 storica color argento, simbolo dell'eredità automobilistica italiana" width="640" height="480" loading="lazy">
+            </div>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="cols-3">
+            <div class="lede-block">
+                <p class="eyebrow">Eredità</p>
+                <h2 style="margin-bottom:.75rem;">Capolavori su ruote</h2>
+                <p>L'arte dei veicoli d'epoca si rivela in ogni curva, in ogni dettaglio cromato, in ogni rumore del motore che racconta strade lontane e tempi gloriosi. Un capolavoro mobile dove la meccanica incontra l'estetica.</p>
+            </div>
+            <div class="lede-block">
+                <p class="eyebrow">Rinnovamento</p>
+                <h2 style="margin-bottom:.75rem;">Giovani al volante</h2>
+                <p>Portiamo le nuove generazioni a guidare la storia, non solo ad ammirarla. Dalle sessioni del Progetto Giovani agli equipaggi padre-figlio del Gottardo, la passione si trasmette mettendosi davvero al volante.</p>
+            </div>
+            <div class="lede-block">
+                <p class="eyebrow">Appartenenza</p>
+                <h2 style="margin-bottom:.75rem;">Un gruppo unito</h2>
+                <p>Siamo un gruppo unito dalla stessa passione, dove entusiasmo, competenze e visione si incontrano. Insieme diamo vita a progetti ed esperienze che valorizzano i veicoli storici del Ticino.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="galleria">
+    <div class="wrap">
+        <p class="eyebrow">Galleria</p>
+        <h2 style="margin-bottom:2.5rem;">Capolavori su ruote che raccontano il tempo</h2>
+        <div class="gallery-strip">
+            <figure class="tilt-l">
+                <div class="frame frame--photo">
+                    <img src="/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica argento, dettaglio della linea posteriore" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>Alfa Romeo 6C · linea Touring</figcaption>
+            </figure>
+            <figure class="tilt-r">
+                <div class="frame frame--photo">
+                    <img src="/uploads/bmw328-race.jpg" alt="BMW 328 storica numero 99 in azione durante una rievocazione" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>In gara · spirito Mille Miglia</figcaption>
+            </figure>
+            <figure class="tilt-l">
+                <div class="frame frame--photo">
+                    <img src="/uploads/ceresio.jpg" alt="Veduta storica del Lago di Lugano a Porto Ceresio, teatro dei nostri eventi" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>Ceresio · le nostre strade</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-2">
+        <div>
+            <p class="eyebrow">Sotto un'unica bandiera</p>
+            <h2>Federazione Svizzera dei Veicoli Storici</h2>
+        </div>
+        <div class="lede-block">
+            <p>Sostenitori e appassionati uniti sotto un'unica bandiera: la Federazione Svizzera dei Veicoli Storici vi dà voce per promuovere i veicoli storici, trasformando la nostalgia in azione concreta per la conservazione del nostro retaggio automobilistico.</p>
+            <p class="swiss-line">
+                {{ ui.swiss_chip() }}
+                Next Heritage · associazione promotrice di Young4Vintage Ticino
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cta">
+    <div class="wrap" style="max-width:46ch;">
+        <p class="eyebrow">Vivi e trasmetti la passione</p>
+        <h2>Partecipa al progetto</h2>
+        <p style="color:rgba(244,239,226,.85); margin:1rem 0 2rem;">Vuoi vivere e trasmettere questa passione? Diventa socio e scopri come partecipare insieme a noi.</p>
+        <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
+    </div>
+</section>
+{% endblock %}

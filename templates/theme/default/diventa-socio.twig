@@ -1,0 +1,102 @@
+{% extends '@theme/layout.twig' %}
+{% import "@theme/_macros.twig" as ui %}
+{% set active = 'socio' %}
+
+{% block title %}Diventa socio — Next Heritage{% endblock %}
+{% block description %}Unisciti a Next Heritage come socio o sostenitore e contribuisci a portare le nuove generazioni al volante delle auto storiche in Ticino.{% endblock %}
+{% block head %}
+    <meta property="og:title" content="Diventa socio — Next Heritage">
+    <meta property="og:description" content="Socio o sostenitore: scegli come far parte della comunità Young4Vintage del Ticino.">
+{% endblock %}
+
+{% block content %}
+<section class="section--sm">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Unisciti alla comunità</p>
+            <div class="bleed">
+                <h1 class="bleed__h">Diventa <span class="accent-word">socio</span></h1>
+            </div>
+            <p class="hero-sub" style="margin-top:0;">Unisciti al nostro gruppo, diventa socio e contribuisci a preservare il patrimonio culturale del futuro — guidando la storia con noi.</p>
+        </div>
+        <figure class="tilt-r" style="margin:0;">
+            <div class="frame frame--photo" style="aspect-ratio:16/9;">
+                <span class="duo duo--red"><img src="/uploads/steering.jpg" alt="Volante e cruscotto di un'auto d'epoca, dettaglio cromato" width="640" height="360" loading="lazy"></span>
+            </div>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow">Due modi per esserci</p>
+        <h2 style="margin-bottom:2.5rem;">Scegli il tuo ruolo</h2>
+        <div class="two-col">
+            <article class="frame benefit-card">
+                <div class="card-body">
+                    <p class="eyebrow">Al volante</p>
+                    <h3>Socio</h3>
+                    <p class="price-note">Per chi vuole partecipare</p>
+                    <ul class="benefit-list">
+                        <li>Accesso agli eventi e ai rally 2026</li>
+                        <li>Posti negli equipaggi e nel Progetto Giovani</li>
+                        <li>Parte attiva della comunità Young4Vintage</li>
+                        <li>Aggiornamenti su programmi e iscrizioni</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="frame benefit-card">
+                <div class="card-body">
+                    <p class="eyebrow">Al fianco</p>
+                    <h3>Sostenitore</h3>
+                    <p class="price-note">Per chi vuole sostenere</p>
+                    <ul class="benefit-list">
+                        <li>Sostieni la missione di Next Heritage</li>
+                        <li>Aiuti a costruire il legame tra passato e presente</li>
+                        <li>Riconoscimento come sostenitore dell'iniziativa</li>
+                        <li>Inviti agli appuntamenti dell'associazione</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Richiesta di adesione</p>
+            <h2>Compila e invia</h2>
+            <p class="lede-block" style="margin-top:1rem;">Raccontaci chi sei e come vuoi partecipare. Ti ricontattiamo via e-mail con tutti i dettagli per l'adesione.</p>
+            <p class="swiss-line">{{ ui.swiss_chip() }} Membri della Federazione Svizzera dei Veicoli Storici</p>
+        </div>
+        <div class="frame" style="background:var(--crema);">
+            <div class="card-body">
+                <!-- TODO: replace REPLACE_ME with the real Formspree form ID; or swap to mailto:info@nextheritage.ch [verify] -->
+                <form class="form-grid" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                    <div class="form-row">
+                        <label class="field"><span>Nome</span><input name="nome" type="text" autocomplete="given-name" required></label>
+                        <label class="field"><span>Cognome</span><input name="cognome" type="text" autocomplete="family-name"></label>
+                    </div>
+                    <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+                    <label class="field"><span>Ruolo</span>
+                        <select name="ruolo">
+                            <option value="Socio">Socio — voglio partecipare</option>
+                            <option value="Sostenitore">Sostenitore — voglio sostenere</option>
+                        </select>
+                    </label>
+                    <label class="field"><span>Messaggio</span><textarea name="messaggio" placeholder="Parlaci della tua passione per le auto storiche…"></textarea></label>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button class="btn btn--primary" type="submit">Invia richiesta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--sm">
+    <div class="wrap center-row">
+        <p class="swiss-line">{{ ui.swiss_chip() }} I tuoi dati restano tra noi — niente spam, solo Next Heritage.</p>
+    </div>
+</section>
+{% endblock %}

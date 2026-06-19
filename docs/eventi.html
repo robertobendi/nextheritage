@@ -1,18 +1,17 @@
-{% import "@theme/_macros.twig" as ui %}<!doctype html>
+<!doctype html>
 <html lang="it">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    {% block meta %}
-        <meta name="description" content="{% block description %}Next Heritage — associazione ticinese che porta le nuove generazioni al volante delle auto storiche. Born 2 Late 4 Classic.{% endblock %}">
-    {% endblock %}
-    <meta name="theme-color" content="#c1272d">
+    <title>Eventi 2026 — Next Heritage</title>
+            <meta name="description" content="Tre rally storici in Ticino nel 2026: Gottardo Classic (21 giugno), Rievocazione di Campione d'Italia (3–6 settembre) e Lugano Classic (17–18 ottobre).">
+        <meta name="theme-color" content="#c1272d">
     <link rel="icon" href="/uploads/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    {% block head %}{% endblock %}
+        <meta property="og:title" content="Eventi 2026 — Next Heritage">
+    <meta property="og:description" content="Gottardo Classic, Rievocazione di Campione d'Italia e Lugano Classic: il calendario delle auto storiche in Ticino.">
     <style>
         :root {
             /* Palette — BRIEF § 3 */
@@ -429,11 +428,11 @@
             </a>
             <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
             <nav id="primary-nav" class="primary-nav" aria-label="Navigazione principale">
-                <a href="/eventi"{% if active == 'eventi' %} aria-current="page"{% endif %}>Eventi</a>
-                <a href="/missione"{% if active == 'missione' %} aria-current="page"{% endif %}>Missione</a>
+                <a href="/eventi" aria-current="page">Eventi</a>
+                <a href="/missione">Missione</a>
                 <a href="/missione#galleria">Galleria</a>
-                <a href="/contatti"{% if active == 'contatti' %} aria-current="page"{% endif %}>Contatti</a>
-                <a class="nav-cta" href="/diventa-socio"{% if active == 'socio' %} aria-current="page"{% endif %}>Diventa socio</a>
+                <a href="/contatti">Contatti</a>
+                <a class="nav-cta" href="/diventa-socio">Diventa socio</a>
                 <span class="lang" title="Sito in italiano · altre lingue presto disponibili" aria-label="Lingua: Italiano">
                     <b>IT</b><span>EN</span><span>FR</span><span>DE</span>
                 </span>
@@ -442,7 +441,108 @@
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        <section class="section--sm">
+    <div class="wrap">
+        <p class="eyebrow">Calendario · Ticino, Svizzera</p>
+        <div class="bleed">
+            <h1 class="bleed__h">Eventi <span class="accent-word">2026</span></h1>
+        </div>
+        <p class="hero-sub" style="margin-top:0;">Tre appuntamenti per vivere il motorismo storico da protagonisti, non da spettatori. Date fisse, percorsi reali, posti al volante.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <article class="plate">
+            <div>
+                <p class="eyebrow">8ª edizione · 21 giugno 2026</p>
+                <h2 class="plate-name">Gottardo Classic</h2>
+                <p class="date-stamp">21 Giugno</p>
+                <p>L'edizione 2026 sarà ancora più speciale: due equipaggi composti da genitori e figli portano in strada il vero spirito della manifestazione. Un'esperienza che unisce tradizione, condivisione e amore per le auto storiche.</p>
+                <ol class="route" aria-label="Percorso Gottardo Classic">
+                    <li>Winteler, Giubiasco</li>
+                    <li>Golf Club Gerre</li>
+                    <li>Ascona</li>
+                    <li>Locarno</li>
+                    <li>Gottardo Arena</li>
+                </ol>
+                <a class="btn btn--primary" href="mailto:info@nextheritage.ch?subject=Gottardo%20Classic%202026">Programma &amp; iscrizione</a>
+            </div>
+            <div class="plate__media">
+                <figure class="tilt-l" style="margin:0;">
+                    <div class="frame frame--photo" style="aspect-ratio:4/3;">
+                        <img src="/uploads/bmw328-race.jpg" alt="BMW 328 storica numero 99 in gara su strada di montagna verso il Gottardo" width="640" height="480" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <article class="plate">
+            <div>
+                <p class="eyebrow">Kermesse del Ceresio · 3–6 settembre 2026</p>
+                <h2 class="plate-name">Rievocazione di Campione d'Italia</h2>
+                <p class="date-stamp">3–6 Set</p>
+                <p>Il «circuito più piccolo del mondo» torna in vita tra le strade del Lago di Lugano. Un evento unico per rivivere l'emozione delle grandi corse d'epoca e diventare parte di una leggenda senza tempo.</p>
+                <ol class="route" aria-label="Programma Campione d'Italia">
+                    <li>Circuito cittadino del Ceresio</li>
+                    <li>Sessioni di guida diurne</li>
+                    <li>Sessioni di guida notturne</li>
+                </ol>
+                <div class="giovani-callout">
+                    <strong>Progetto Giovani</strong>
+                    I partecipanti vivono un'esperienza a bordo di autentiche vetture d'epoca, in sessioni di guida diurne e notturne pensate per avvicinare le nuove generazioni al motorismo storico.
+                </div>
+                <p style="margin-top:1.5rem;"><a class="btn btn--primary" href="mailto:info@nextheritage.ch?subject=Campione%20d'Italia%202026">Richiedi informazioni</a></p>
+            </div>
+            <div class="plate__media">
+                <figure style="margin:0;">
+                    <div class="frame frame--photo" style="aspect-ratio:4/3;">
+                        <img src="/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica argento vista posteriore, tipica vettura da rievocazione" width="640" height="480" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <article class="plate">
+            <div>
+                <p class="eyebrow">Due giorni in città · 17–18 ottobre 2026</p>
+                <h2 class="plate-name">Lugano Classic</h2>
+                <p class="date-stamp">17–18 Ott</p>
+                <p>Le piazze di Lugano si trasformano in un elegante museo a cielo aperto, dove il fascino senza tempo delle auto storiche incontra la bellezza della città. Un suggestivo itinerario tra paesaggi, cultura e tradizioni del Ticino.</p>
+                <ol class="route" aria-label="Programma Lugano Classic">
+                    <li>Esposizione nelle piazze</li>
+                    <li>Tour panoramico nel Ticino</li>
+                    <li>Ritrovo &amp; premiazione</li>
+                </ol>
+                <a class="btn btn--primary" href="mailto:info@nextheritage.ch?subject=Lugano%20Classic%202026">Programma &amp; iscrizione</a>
+            </div>
+            <div class="plate__media">
+                <figure style="margin:0;">
+                    <div class="frame frame--photo" style="aspect-ratio:4/3;">
+                        <img src="/uploads/alfa-front.jpg" alt="Alfa Romeo 6C 2500 storica argento vista frontale, esposta come a Lugano Classic" width="640" height="480" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="section band-cta">
+    <div class="wrap" style="max-width:46ch;">
+        <p class="eyebrow">Vieni a guidare con noi</p>
+        <h2>Un posto al volante ti aspetta</h2>
+        <p style="color:rgba(244,239,226,.85); margin:1rem 0 2rem;">Diventa socio e partecipa agli eventi 2026 come protagonista del motorismo storico ticinese.</p>
+        <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
+    </div>
+</section>
     </main>
 
     <footer class="site-footer">
@@ -483,7 +583,7 @@
                 <div>
                     <h4>Federazione</h4>
                     <p class="swiss-line" style="color:var(--crema);">
-                        {{ ui.swiss_chip() }}
+                        <svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="5" fill="#c1272d"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fff"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fff"/></svg>
                         Federazione Svizzera<br>dei Veicoli Storici
                     </p>
                     <p style="font-family:var(--font-accent); font-size:.9375rem; margin-top:.6rem;">Young4Vintage · Ticino</p>
@@ -491,7 +591,7 @@
                 </div>
             </div>
             <div class="footer-base">
-                <span>© {{ "now"|date('Y') }} Next Heritage · Ticino, Svizzera</span>
+                <span>© 2026 Next Heritage · Ticino, Svizzera</span>
                 <span><b style="color:var(--ottone);">IT</b> · EN · FR · DE</span>
             </div>
         </div>

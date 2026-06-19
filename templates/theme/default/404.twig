@@ -1,11 +1,20 @@
 {% extends '@theme/layout.twig' %}
 
-{% block title %}Not found · {{ site.name }}{% endblock %}
+{% block title %}Pagina non trovata — Next Heritage{% endblock %}
+{% block description %}La pagina cercata non esiste o è stata spostata. Torna alla home di Next Heritage.{% endblock %}
 
 {% block content %}
-<div class="wrap empty-state">
-    <h1>404</h1>
-    <p class="lede">That page doesn’t exist — or has been moved.</p>
-    <p><a href="/">Go home →</a></p>
-</div>
+<section class="section">
+    <div class="wrap" style="text-align:center;">
+        <p class="eyebrow">Errore 404</p>
+        <div class="bleed bleed--red" style="text-align:left;">
+            <h1 class="bleed__h">Fuori <span class="accent-word">strada</span></h1>
+        </div>
+        <p class="hero-sub" style="margin-inline:auto;">Questa pagina non esiste, o ha cambiato percorso. Rimettiti in carreggiata.</p>
+        <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn--primary" href="/">Torna alla home</a>
+            <a class="btn btn--ghost" href="/eventi">Vedi gli eventi</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

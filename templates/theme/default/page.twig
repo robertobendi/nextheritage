@@ -1,13 +1,18 @@
 {% extends '@theme/layout.twig' %}
-{% set meta_description = entry.field('meta_description') %}
 
-{% block title %}{{ entry.field('title') }} · {{ site.name }}{% endblock %}
+{% block title %}{{ entry.field('title') }} — {{ site.name }}{% endblock %}
+{% block description %}{{ entry.field('meta_description') ?: 'Next Heritage — auto storiche per le nuove generazioni in Ticino.' }}{% endblock %}
 
 {% block content %}
-<article class="wrap">
-    <h1>{{ entry.field('title') }}</h1>
-    <div class="article-body">
-        {{ entry.field('body')|markdown }}
-    </div>
-</article>
+<section class="section">
+    <article class="wrap">
+        <p class="eyebrow">Next Heritage</p>
+        <div class="bleed">
+            <h1 class="bleed__h">{{ entry.field('title') }}</h1>
+        </div>
+        <div class="lede-block article-body">
+            {{ entry.field('body')|markdown }}
+        </div>
+    </article>
+</section>
 {% endblock %}

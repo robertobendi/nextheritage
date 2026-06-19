@@ -1,21 +1,148 @@
 {% extends '@theme/layout.twig' %}
+{% import "@theme/_macros.twig" as ui %}
+
+{% block title %}Next Heritage — Auto storiche per le nuove generazioni in Ticino{% endblock %}
+{% block description %}Associazione ticinese Young4Vintage: portiamo i giovani al volante delle auto storiche. Prossimo evento Gottardo Classic, 21 giugno. Diventa socio.{% endblock %}
+
+{% block head %}
+    <meta property="og:title" content="Next Heritage — Born 2 Late 4 Classic">
+    <meta property="og:description" content="Associazione ticinese che porta le nuove generazioni al volante delle auto storiche.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Next Heritage",
+        "alternateName": "Young4Vintage Ticino",
+        "url": "{{ site.url }}",
+        "logo": "{{ site.url }}/uploads/img-00.png",
+        "description": "Associazione ticinese del progetto Young4Vintage che porta le nuove generazioni al volante delle auto e dei veicoli storici, evento dopo evento.",
+        "slogan": "Born 2 Late 4 Classic",
+        "email": "info@nextheritage.ch",
+        "areaServed": "Ticino, Svizzera",
+        "memberOf": {
+            "@type": "Organization",
+            "name": "Federazione Svizzera dei Veicoli Storici"
+        }
+    }
+    </script>
+{% endblock %}
 
 {% block content %}
-<div class="wrap">
-    <h1>{{ site.name }}</h1>
-    <p class="lede">Welcome. This is your new Pebblestack site. Edit this page in the admin to make it your own — or create a Page with the slug <code>home</code> to replace this entirely.</p>
+<section class="hero" aria-label="Next Heritage">
+    <div class="hero-banner">
+        {{ ui.checker('checker-corner--tl') }}
+        {{ ui.checker('checker-corner--tr') }}
+        <img class="hero-banner__crest" src="/uploads/img-00.png" alt="Stemma Next Heritage: scudo con bandiere a scacchi, volante e auto storiche, motto Born 2 Late 4 Classic" width="210" height="315">
+        <p class="hero-banner__tag">Young4Vintage · Ticino · Svizzera</p>
+    </div>
 
-    {% if recent_posts|length > 0 %}
-        <h2>Latest writing</h2>
-        {% for post in recent_posts %}
-            <a class="post-card" href="/blog/{{ post.slug }}">
-                <h2>{{ post.field('title', '(untitled)') }}</h2>
-                <div class="date">{{ (post.publishAt ?? post.createdAt)|date('F j, Y') }}</div>
-                {% if post.field('excerpt') %}
-                    <p>{{ post.field('excerpt') }}</p>
-                {% endif %}
-            </a>
-        {% endfor %}
-    {% endif %}
-</div>
+    <div class="wrap hero-body">
+        <div class="bleed">
+            <h1 class="bleed__h">Born 2 Late<br>4 Classic — <span class="accent-word">Guida<br>la Storia</span></h1>
+        </div>
+        <p class="hero-sub">Associazione ticinese del Young4Vintage: portiamo le nuove generazioni al volante delle auto storiche, evento dopo evento — dal Gottardo al Ceresio.</p>
+        <div class="hero-actions">
+            <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
+            <a class="btn btn--ghost" href="/eventi">Vedi gli eventi</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <span class="next-flag">Prossimo evento</span>
+        <div class="featured">
+            <div>
+                <p class="eyebrow">Gottardo Classic · 8ª edizione</p>
+                <p class="date-stamp">21 Giugno</p>
+                <p class="lede-block">Due equipaggi composti da genitori e figli portano in strada il vero spirito della manifestazione: la passione che attraversa le generazioni, chilometro dopo chilometro.</p>
+                <ol class="route" aria-label="Tappe del percorso">
+                    <li>Winteler, Giubiasco</li>
+                    <li>Golf Club Gerre</li>
+                    <li>Ascona &amp; Locarno</li>
+                    <li>Gottardo Arena</li>
+                </ol>
+                <a class="btn btn--primary" href="/eventi">Programma &amp; iscrizione</a>
+            </div>
+            <div class="featured__media">
+                <figure class="taped" style="display:block;">
+                    <span class="tape tape--tl" aria-hidden="true"></span>
+                    <span class="tape tape--br" aria-hidden="true"></span>
+                    <div class="frame frame--photo" style="aspect-ratio:4/3;">
+                        <img src="/uploads/bmw328-race.jpg" alt="Auto sportiva storica BMW 328 numero 99 in gara su strada di montagna" width="720" height="540" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-2">
+        <div>
+            <p class="eyebrow">La nostra missione</p>
+            <p class="pull">Un ponte tra <span class="accent-word">generazioni</span>, una passione che continua.</p>
+        </div>
+        <div class="lede-block">
+            <p>La vera eredità non è soltanto conservare ciò che abbiamo ricevuto, ma renderlo vivo e rilevante per chi verrà dopo di noi. Favoriamo l'incontro tra esperienza e innovazione, trasformando la memoria in opportunità.</p>
+            <a class="text-link" href="/missione">Scopri la missione</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow">Calendario</p>
+        <h2 style="margin-bottom:2.5rem;">Eventi 2026</h2>
+        <div class="mini-grid">
+            <article class="mini-card">
+                <div class="frame frame--photo">
+                    <img src="/uploads/bmw328-race.jpg" alt="BMW 328 storica in gara alla Gottardo Classic" width="480" height="320" loading="lazy">
+                </div>
+                <h3>Gottardo Classic</h3>
+                <p class="mc-date">21 GIU</p>
+                <p>Dal Bellinzonese alla Gottardo Arena con equipaggi genitori e figli.</p>
+                <a class="text-link" href="/eventi">Più informazioni</a>
+            </article>
+            <article class="mini-card">
+                <div class="frame frame--photo">
+                    <img src="/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista posteriore" width="480" height="320" loading="lazy">
+                </div>
+                <h3>Rievocazione Campione d'Italia</h3>
+                <p class="mc-date">3–6 SET</p>
+                <p>Il «circuito più piccolo del mondo» rivive sulle rive del Ceresio.</p>
+                <a class="text-link" href="/eventi">Più informazioni</a>
+            </article>
+            <article class="mini-card">
+                <div class="frame frame--photo">
+                    <img src="/uploads/alfa-front.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista frontale" width="480" height="320" loading="lazy">
+                </div>
+                <h3>Lugano Classic</h3>
+                <p class="mc-date">17–18 OTT</p>
+                <p>Le piazze di Lugano diventano un museo a cielo aperto di auto d'epoca.</p>
+                <a class="text-link" href="/eventi">Più informazioni</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section--sm band-cred">
+    <div class="wrap center-row">
+        <p class="swiss-line">
+            {{ ui.swiss_chip() }}
+            Membri e sostenitori della Federazione Svizzera dei Veicoli Storici
+        </p>
+        <p style="font-family:var(--font-accent); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.8125rem; color:var(--bordo); margin:0;">Iniziativa Young4Vintage</p>
+    </div>
+</section>
+
+<section class="section band-cta">
+    <div class="wrap" style="max-width:46ch;">
+        <p class="eyebrow">Unisciti a noi</p>
+        <h2>Diventa parte della comunità</h2>
+        <p style="color:rgba(244,239,226,.85); margin:1rem 0 2rem;">Giovani che amano le vetture storiche, uniti per preservare il patrimonio culturale del futuro. Vieni a guidare con noi.</p>
+        <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
+    </div>
+</section>
 {% endblock %}

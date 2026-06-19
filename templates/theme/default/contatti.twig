@@ -1,0 +1,64 @@
+{% extends '@theme/layout.twig' %}
+{% import "@theme/_macros.twig" as ui %}
+{% set active = 'contatti' %}
+
+{% block title %}Contatti — Next Heritage{% endblock %}
+{% block description %}Scrivi a Next Heritage per partecipare agli eventi, diventare socio o ricevere informazioni sul motorismo storico in Ticino. info@nextheritage.ch.{% endblock %}
+{% block head %}
+    <meta property="og:title" content="Contatti — Next Heritage">
+    <meta property="og:description" content="Apri una linea con l'associazione ticinese Young4Vintage. Scrivici via e-mail.">
+{% endblock %}
+
+{% block content %}
+<section class="section--sm">
+    <div class="wrap">
+        <p class="eyebrow">Parla con noi</p>
+        <div class="bleed">
+            <h1 class="bleed__h"><span class="accent-word">Contatti</span></h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap intent">
+        <div class="lede-block">
+            <p class="eyebrow">Scrivici</p>
+            <h2 style="margin-bottom:1rem;">Vieni a guidare con noi</h2>
+            <p>I nostri eventi accolgono appassionati e curiosi, offrendo momenti di scoperta e condivisione nel mondo dei veicoli storici. Per maggiori informazioni, per iscriverti o per partecipare al Progetto Giovani, non esitare a contattarci.</p>
+            <p style="margin-top:1.5rem;">
+                <a class="text-link" href="mailto:info@nextheritage.ch">info@nextheritage.ch</a>
+                <!-- [verify] no public phone/email captured from source; domain-derived address used per BRIEF -->
+            </p>
+            <p class="swiss-line" style="margin-top:1.5rem;">{{ ui.swiss_chip() }} Ticino, Svizzera · Young4Vintage</p>
+        </div>
+        <div class="frame" style="background:var(--crema);">
+            <div class="card-body">
+                <!-- TODO: replace REPLACE_ME with the real Formspree form ID; or swap to mailto:info@nextheritage.ch [verify] -->
+                <form class="form-grid" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                    <label class="field"><span>Nome</span><input name="name" type="text" autocomplete="name" required></label>
+                    <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+                    <label class="field"><span>Messaggio</span><textarea name="message" placeholder="Come possiamo aiutarti?" required></textarea></label>
+                    <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button class="btn btn--primary" type="submit">Invia</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section band-cred">
+    <div class="wrap cols-media">
+        <div>
+            <p class="eyebrow">Dove corriamo</p>
+            <h2>Il Ticino delle auto storiche</h2>
+            <p class="lede-block" style="margin-top:1rem;">Dal Gottardo al Ceresio, da Lugano a Locarno: le nostre strade sono il palcoscenico naturale del motorismo d'epoca. Lugano, Ascona, Giubiasco e Campione d'Italia.</p>
+            <p class="swiss-line">{{ ui.swiss_chip() }} Federazione Svizzera dei Veicoli Storici</p>
+        </div>
+        <figure class="tilt-l" style="margin:0;">
+            <div class="frame frame--photo" style="aspect-ratio:16/9;">
+                <span class="duo duo--green"><img src="/uploads/ceresio.jpg" alt="Veduta storica del Lago di Lugano, Ceresio, Ticino" width="640" height="360" loading="lazy"></span>
+            </div>
+        </figure>
+    </div>
+</section>
+{% endblock %}

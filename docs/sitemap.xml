@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://127.0.0.1:50928/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:50928/eventi</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:50928/missione</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:50928/diventa-socio</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:50928/contatti</loc>
+  </url>
+</urlset>
