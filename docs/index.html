@@ -114,8 +114,11 @@
             font-size: clamp(3.5rem, 9vw, 9rem); line-height: .92;
             margin: 0 -64px 0 0;
             color: var(--nero);
-            text-wrap: balance;
         }
+        /* full-width headings genuinely overshoot + crop past the right viewport edge
+           (html/body overflow-x:clip). Scoped to .wrap > .bleed so headings nested
+           inside a column never overflow into an adjacent photo. */
+        .wrap > .bleed > .bleed__h { white-space: nowrap; }
         .bleed::after {
             content: ""; position: absolute; left: 50%; bottom: 0;
             width: 100vw; transform: translateX(-50%);
@@ -132,10 +135,11 @@
         }
 
         /* ---- Double black-gold frame (fingerprint 4) ---- */
+        /* double border, fingerprint 4: 2px Nero OUTER + 2px Ottone INNER, ~4px gap */
         .frame {
             position: relative; background: var(--crema);
-            border: 2px solid var(--nero);
-            box-shadow: 0 0 0 4px var(--crema), 0 0 0 6px var(--ottone);
+            border: 2px solid var(--ottone);
+            box-shadow: 0 0 0 4px var(--crema), 0 0 0 6px var(--nero);
         }
         .frame--photo { padding: 0; line-height: 0; background: var(--nero); }
         .frame--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -252,7 +256,8 @@
         }
 
         /* ---- Footer ---- */
-        .site-footer { position: relative; background: var(--bordo); color: var(--crema); }
+        /* lighter brass inside the Bordò footer so headings/links clear AA contrast */
+        .site-footer { position: relative; background: var(--bordo); color: var(--crema); --ottone: #e8be3e; }
         .footer-inner { max-width: var(--max); margin-inline: auto; padding: var(--s-5) clamp(1rem, 4vw, 2rem) var(--s-4); }
         .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--s-4); }
         .site-footer img.crest { height: 86px; width: auto; }
@@ -310,6 +315,7 @@
 
         /* ---- Mini event grid ---- */
         .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+        .mini-grid--2 { grid-template-columns: repeat(2, 1fr); }
         .mini-card { display: flex; flex-direction: column; }
         .mini-card .frame--photo { aspect-ratio: 3/2; }
         .mini-card h3 { margin: 1rem 0 .35rem; }
@@ -336,7 +342,7 @@
             background: var(--pistacchio); color: var(--crema);
             border-left: 6px solid var(--ottone);
         }
-        .giovani-callout strong { font-family: var(--font-accent); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .8125rem; display: block; margin-bottom: .35rem; color: var(--ottone); }
+        .giovani-callout strong { font-family: var(--font-accent); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .8125rem; display: block; margin-bottom: .35rem; color: var(--crema); }
 
         /* ---- Pull quote ---- */
         .pull {
@@ -430,6 +436,7 @@
             .nav-cta { text-align: center; margin-top: .5rem; }
             .lang { align-self: flex-start; margin-top: .5rem; }
             .bleed__h { margin-right: -28px; }
+            .wrap > .bleed > .bleed__h { white-space: normal; }
             .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -472,13 +479,13 @@
     <div class="hero-banner">
         <svg class="checker-corner checker-corner--tl" viewBox="0 0 88 26" preserveAspectRatio="none" aria-hidden="true"><rect width="88" height="26" fill="#f4efe2"/><g fill="#1a1410"><rect x="0" y="0" width="11" height="13"/><rect x="22" y="0" width="11" height="13"/><rect x="44" y="0" width="11" height="13"/><rect x="66" y="0" width="11" height="13"/><rect x="11" y="13" width="11" height="13"/><rect x="33" y="13" width="11" height="13"/><rect x="55" y="13" width="11" height="13"/><rect x="77" y="13" width="11" height="13"/></g></svg>
         <svg class="checker-corner checker-corner--tr" viewBox="0 0 88 26" preserveAspectRatio="none" aria-hidden="true"><rect width="88" height="26" fill="#f4efe2"/><g fill="#1a1410"><rect x="0" y="0" width="11" height="13"/><rect x="22" y="0" width="11" height="13"/><rect x="44" y="0" width="11" height="13"/><rect x="66" y="0" width="11" height="13"/><rect x="11" y="13" width="11" height="13"/><rect x="33" y="13" width="11" height="13"/><rect x="55" y="13" width="11" height="13"/><rect x="77" y="13" width="11" height="13"/></g></svg>
-        <img loading="lazy" decoding="async" class="hero-banner__crest" src="/nextheritage/uploads/img-00.png" alt="Stemma Next Heritage: scudo con bandiere a scacchi, volante e auto storiche, motto Born 2 Late 4 Classic" width="210" height="315">
+        <img class="hero-banner__crest" src="/nextheritage/uploads/img-00.png" alt="Stemma Next Heritage: scudo con bandiere a scacchi, volante e auto storiche, motto Born 2 Late 4 Classic" width="210" height="315" loading="eager" fetchpriority="high" decoding="async">
         <p class="hero-banner__tag">Young4Vintage · Ticino · Svizzera</p>
     </div>
 
     <div class="wrap hero-body">
         <div class="bleed">
-            <h1 class="bleed__h">Born 2 Late<br>4 Classic — <span class="accent-word">Guida<br>la Storia</span></h1>
+            <h1 class="bleed__h">Born 2 Late 4 Classic<br><span class="accent-word">— Guida la Storia</span></h1>
         </div>
         <p class="hero-sub">Associazione ticinese del Young4Vintage: portiamo le nuove generazioni al volante delle auto storiche, evento dopo evento — dal Gottardo al Ceresio.</p>
         <div class="hero-actions">
@@ -509,7 +516,7 @@
                     <span class="tape tape--tl" aria-hidden="true"></span>
                     <span class="tape tape--br" aria-hidden="true"></span>
                     <div class="frame frame--photo" style="aspect-ratio:4/3;">
-                        <img src="/nextheritage/uploads/bmw328-race.jpg" alt="Auto sportiva storica BMW 328 numero 99 in gara su strada di montagna" width="720" height="540" loading="lazy">
+                        <img src="/nextheritage/uploads/community.jpg" alt="Genitori e figli della comunità Next Heritage riuniti a un raduno, con uno striscione disegnato a mano «DanKe Dani»" width="720" height="540" loading="lazy">
                     </div>
                 </figure>
             </div>
@@ -534,16 +541,7 @@
     <div class="wrap">
         <p class="eyebrow">Calendario</p>
         <h2 style="margin-bottom:2.5rem;">Eventi 2026</h2>
-        <div class="mini-grid">
-            <article class="mini-card">
-                <div class="frame frame--photo">
-                    <img src="/nextheritage/uploads/bmw328-race.jpg" alt="BMW 328 storica in gara alla Gottardo Classic" width="480" height="320" loading="lazy">
-                </div>
-                <h3>Gottardo Classic</h3>
-                <p class="mc-date">21 GIU</p>
-                <p>Dal Bellinzonese alla Gottardo Arena con equipaggi genitori e figli.</p>
-                <a class="text-link" href="/nextheritage/eventi">Più informazioni</a>
-            </article>
+        <div class="mini-grid mini-grid--2">
             <article class="mini-card">
                 <div class="frame frame--photo">
                     <img src="/nextheritage/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista posteriore" width="480" height="320" loading="lazy">
