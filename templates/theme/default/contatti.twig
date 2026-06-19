@@ -27,19 +27,17 @@
             <p>I nostri eventi accolgono appassionati e curiosi, offrendo momenti di scoperta e condivisione nel mondo dei veicoli storici. Per maggiori informazioni, per iscriverti o per partecipare al Progetto Giovani, non esitare a contattarci.</p>
             <p style="margin-top:1.5rem;">
                 <a class="text-link" href="mailto:info@nextheritage.ch">info@nextheritage.ch</a>
-                <!-- [verify] no public phone/email captured from source; domain-derived address used per BRIEF -->
             </p>
             <p class="swiss-line" style="margin-top:1.5rem;">{{ ui.swiss_chip() }} Ticino, Svizzera · Young4Vintage</p>
         </div>
         <div class="frame" style="background:var(--crema);">
             <div class="card-body">
-                <!-- TODO: replace REPLACE_ME with the real Formspree form ID; or swap to mailto:info@nextheritage.ch [verify] -->
-                <form class="form-grid" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                <form class="form-grid" action="mailto:info@nextheritage.ch?subject=Messaggio%20dal%20sito%20Next%20Heritage" method="post" enctype="text/plain">
                     <label class="field"><span>Nome</span><input name="name" type="text" autocomplete="name" required></label>
                     <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
                     <label class="field"><span>Messaggio</span><textarea name="message" placeholder="Come possiamo aiutarti?" required></textarea></label>
                     <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-                    <button class="btn btn--primary" type="submit">Invia</button>
+                    <button class="btn btn--primary" type="submit">Invia messaggio</button>
                 </form>
             </div>
         </div>
