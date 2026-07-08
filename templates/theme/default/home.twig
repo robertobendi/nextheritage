@@ -29,111 +29,123 @@
 {% endblock %}
 
 {% block content %}
-<section class="hero" aria-label="Next Heritage">
-    <div class="hero-banner">
-        {{ ui.checker('checker-corner--tl') }}
-        {{ ui.checker('checker-corner--tr') }}
-        <img class="hero-banner__crest" src="/uploads/img-00.png" alt="Stemma Next Heritage: scudo con bandiere a scacchi, volante e auto storiche, motto Born 2 Late 4 Classic" width="210" height="315" loading="eager" fetchpriority="high" decoding="async">
-        <p class="hero-banner__tag">Young4Vintage · Ticino · Svizzera</p>
-    </div>
-
-    <div class="wrap hero-body">
-        <div class="bleed">
-            <h1 class="bleed__h">Born 2 Late 4 Classic<br><span class="accent-word">— Guida la Storia</span></h1>
+<section class="hero on-dark" aria-label="Next Heritage">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+        <div>
+            <p class="kicker">Young4Vintage · Ticino · Svizzera</p>
+            <h1 class="display">La storia<br>non si guarda.<br><em>Si guida.</em></h1>
+            <p class="lede" style="margin-top:1.6rem;">Siamo l'associazione ticinese che porta le nuove generazioni al volante delle auto storiche, evento dopo evento — dal Gottardo al Ceresio.</p>
+            <div class="hero-actions">
+                <a class="btn btn--oro" href="/diventa-socio">Diventa socio</a>
+                <a class="btn btn--line" href="/eventi">Gli eventi 2026</a>
+            </div>
         </div>
-        <p class="hero-sub">Associazione ticinese del Young4Vintage: portiamo le nuove generazioni al volante delle auto storiche, evento dopo evento — dal Gottardo al Ceresio.</p>
-        <div class="hero-actions">
-            <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
-            <a class="btn btn--ghost" href="/eventi">Vedi gli eventi</a>
+        <div class="hero-media">
+            <figure class="coach">
+                <div class="ph ph--tint" style="aspect-ratio:4/5;">
+                    <img src="/uploads/bmw328-race.jpg" alt="BMW 328 storica numero 99 in gara su una strada di montagna" width="640" height="800" loading="eager" fetchpriority="high" decoding="async">
+                </div>
+            </figure>
+            <span class="plate-tag">Gottardo Classic · N° 99</span>
         </div>
     </div>
 </section>
 
-<section class="section">
-    <div class="wrap">
-        <span class="next-flag">Prossimo evento</span>
-        <div class="featured">
-            <div>
-                <p class="eyebrow">Gottardo Classic · 8ª edizione</p>
-                <p class="date-stamp">21 Giugno</p>
-                <p class="lede-block">Due equipaggi composti da genitori e figli portano in strada il vero spirito della manifestazione: la passione che attraversa le generazioni, chilometro dopo chilometro.</p>
-                <ol class="route" aria-label="Tappe del percorso">
-                    <li>Winteler, Giubiasco</li>
-                    <li>Golf Club Gerre</li>
-                    <li>Ascona &amp; Locarno</li>
-                    <li>Gottardo Arena</li>
-                </ol>
-                <a class="btn btn--primary" href="/eventi">Programma &amp; iscrizione</a>
+<section class="on-dark" style="background:var(--pino-2); border-top:1px solid rgba(201,164,92,.3);">
+    <div class="wrap" style="padding-block:2.2rem;">
+        <ul class="timing" aria-label="Calendario eventi 2026">
+            <li><a href="/eventi"><span class="t-name">Gottardo Classic</span><span class="t-dots" aria-hidden="true"></span><span class="t-date">21.06.2026</span></a></li>
+            <li><a href="/eventi"><span class="t-name">Rievocazione Campione d'Italia</span><span class="t-dots" aria-hidden="true"></span><span class="t-date">3–6.09.2026</span></a></li>
+            <li><a href="/eventi"><span class="t-name">Lugano Classic</span><span class="t-dots" aria-hidden="true"></span><span class="t-date">17–18.10.2026</span></a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="sec">
+    <div class="wrap cols-2">
+        <div class="reveal">
+            <p class="kicker">Prossimo appuntamento</p>
+            <h2>Gottardo Classic<br><em>ottava edizione</em></h2>
+            <p class="stamp" style="margin:.9rem 0 1.2rem;">21 giugno</p>
+            <p class="measure">Due equipaggi composti da genitori e figli portano in strada il vero spirito della manifestazione: la passione che attraversa le generazioni, chilometro dopo chilometro.</p>
+            <ol class="roadbook" aria-label="Tappe del percorso">
+                <li>Winteler, Giubiasco</li>
+                <li>Golf Club Gerre</li>
+                <li>Ascona &amp; Locarno</li>
+                <li>Gottardo Arena</li>
+            </ol>
+            <a class="btn btn--oro" href="/eventi">Programma &amp; iscrizione</a>
+        </div>
+        <figure class="coach reveal">
+            <div class="ph ph--tint" style="aspect-ratio:4/3;">
+                <img src="/uploads/community.jpg" alt="Genitori e figli della comunità Next Heritage riuniti a un raduno" width="720" height="540" loading="lazy">
             </div>
-            <div class="featured__media">
-                <figure class="taped" style="display:block;">
-                    <span class="tape tape--tl" aria-hidden="true"></span>
-                    <span class="tape tape--br" aria-hidden="true"></span>
-                    <div class="frame frame--photo" style="aspect-ratio:4/3;">
-                        <img src="/uploads/community.jpg" alt="Genitori e figli della comunità Next Heritage riuniti a un raduno, con uno striscione disegnato a mano «DanKe Dani»" width="720" height="540" loading="lazy">
+            <figcaption>La comunità · Ticino</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="sec on-dark">
+    <div class="wrap cols-2">
+        <div class="reveal">
+            <p class="kicker">La nostra missione</p>
+            <p class="pull">Un ponte tra <em>generazioni</em>, una passione che continua.</p>
+        </div>
+        <div class="reveal">
+            <p class="lede">La vera eredità non è soltanto conservare ciò che abbiamo ricevuto, ma renderlo vivo e rilevante per chi verrà dopo di noi. Favoriamo l'incontro tra esperienza e innovazione, trasformando la memoria in opportunità.</p>
+            <p style="margin-top:1.8rem;"><a class="tlink" href="/missione">Scopri la missione</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="sec">
+    <div class="wrap">
+        <p class="kicker reveal">Calendario 2026</p>
+        <h2 class="reveal" style="margin-bottom:2.8rem;">I prossimi <em>capitoli</em></h2>
+        <div class="cols-2" style="align-items:start;">
+            <article class="reveal">
+                <figure class="coach">
+                    <div class="ph ph--tint" style="aspect-ratio:3/2;">
+                        <img src="/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista posteriore" width="480" height="320" loading="lazy">
                     </div>
                 </figure>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section band-cred">
-    <div class="wrap cols-2">
-        <div>
-            <p class="eyebrow">La nostra missione</p>
-            <p class="pull">Un ponte tra <span class="accent-word">generazioni</span>, una passione che continua.</p>
-        </div>
-        <div class="lede-block">
-            <p>La vera eredità non è soltanto conservare ciò che abbiamo ricevuto, ma renderlo vivo e rilevante per chi verrà dopo di noi. Favoriamo l'incontro tra esperienza e innovazione, trasformando la memoria in opportunità.</p>
-            <a class="text-link" href="/missione">Scopri la missione</a>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="wrap">
-        <p class="eyebrow">Calendario</p>
-        <h2 style="margin-bottom:2.5rem;">Eventi 2026</h2>
-        <div class="mini-grid mini-grid--2">
-            <article class="mini-card">
-                <div class="frame frame--photo">
-                    <img src="/uploads/alfa-rear.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista posteriore" width="480" height="320" loading="lazy">
-                </div>
-                <h3>Rievocazione Campione d'Italia</h3>
-                <p class="mc-date">3–6 SET</p>
-                <p>Il «circuito più piccolo del mondo» rivive sulle rive del Ceresio.</p>
-                <a class="text-link" href="/eventi">Più informazioni</a>
+                <p class="stamp" style="font-size:1.9rem; margin:1.1rem 0 .3rem;">3–6 settembre</p>
+                <h3>Rievocazione di Campione d'Italia</h3>
+                <p class="measure" style="color:var(--inchiostro-2); margin:.5rem 0 1.1rem;">Il «circuito più piccolo del mondo» rivive sulle rive del Ceresio, con sessioni di guida diurne e notturne.</p>
+                <a class="tlink" href="/eventi">Più informazioni</a>
             </article>
-            <article class="mini-card">
-                <div class="frame frame--photo">
-                    <img src="/uploads/alfa-front.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista frontale" width="480" height="320" loading="lazy">
-                </div>
+            <article class="reveal">
+                <figure class="coach">
+                    <div class="ph ph--tint" style="aspect-ratio:3/2;">
+                        <img src="/uploads/alfa-front.jpg" alt="Alfa Romeo 6C 2500 storica color argento, vista frontale" width="480" height="320" loading="lazy">
+                    </div>
+                </figure>
+                <p class="stamp" style="font-size:1.9rem; margin:1.1rem 0 .3rem;">17–18 ottobre</p>
                 <h3>Lugano Classic</h3>
-                <p class="mc-date">17–18 OTT</p>
-                <p>Le piazze di Lugano diventano un museo a cielo aperto di auto d'epoca.</p>
-                <a class="text-link" href="/eventi">Più informazioni</a>
+                <p class="measure" style="color:var(--inchiostro-2); margin:.5rem 0 1.1rem;">Le piazze di Lugano diventano un elegante museo a cielo aperto di automobili d'epoca.</p>
+                <a class="tlink" href="/eventi">Più informazioni</a>
             </article>
         </div>
     </div>
 </section>
 
-<section class="section--sm band-cred">
-    <div class="wrap center-row">
-        <p class="swiss-line">
+<section class="sec--sm band-avorio2">
+    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:1.2rem 3rem; align-items:center; justify-content:space-between;">
+        <p class="swiss-line" style="margin:0;">
             {{ ui.swiss_chip() }}
             Membri e sostenitori della Federazione Svizzera dei Veicoli Storici
         </p>
-        <p style="font-family:var(--font-accent); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.8125rem; color:var(--bordo); margin:0;">Iniziativa Young4Vintage</p>
+        <p style="font-family:var(--f-mono); font-size:.74rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--oro-cupo); margin:0;">Iniziativa Young4Vintage</p>
     </div>
 </section>
 
-<section class="section band-cta">
-    <div class="wrap" style="max-width:46ch;">
-        <p class="eyebrow">Unisciti a noi</p>
-        <h2>Diventa parte della comunità</h2>
-        <p style="color:rgba(244,239,226,.85); margin:1rem 0 2rem;">Giovani che amano le vetture storiche, uniti per preservare il patrimonio culturale del futuro. Vieni a guidare con noi.</p>
-        <a class="btn btn--primary" href="/diventa-socio">Diventa socio</a>
+<section class="sec on-dark" style="text-align:center;">
+    <div class="wrap" style="max-width:52ch;">
+        <p class="kicker reveal" style="justify-content:center;">Unisciti a noi</p>
+        <h2 class="reveal">Diventa parte<br>della <em>comunità</em></h2>
+        <p class="lede reveal" style="margin:1.4rem auto 2.2rem;">Giovani che amano le vetture storiche, uniti per preservare il patrimonio culturale del futuro. Vieni a guidare con noi.</p>
+        <p class="reveal" style="margin:0;"><a class="btn btn--oro" href="/diventa-socio">Diventa socio</a></p>
     </div>
 </section>
 {% endblock %}

@@ -1,0 +1,35 @@
+{% extends '@theme/layout.twig' %}
+{% import "@theme/_macros.twig" as ui %}
+{% set active = 'eventi' %}
+
+{% block title %}{{ entry.field('title') }} — Next Heritage{% endblock %}
+{% block description %}{{ entry.field('summary') ?: 'Un evento Next Heritage: motorismo storico in Ticino.' }}{% endblock %}
+
+{% block content %}
+<section class="sec--sm on-dark">
+    <div class="wrap">
+        <p class="kicker">Eventi · {{ entry.field('date_label') }}</p>
+        <h1 class="display">{{ entry.field('title') }}</h1>
+    </div>
+</section>
+<section class="sec">
+    <div class="wrap cols-2" style="align-items:start;">
+        <div>
+            {% if entry.field('date_label') %}<p class="stamp" style="margin:0 0 1.1rem;">{{ entry.field('date_label') }}</p>{% endif %}
+            {% if entry.field('summary') %}<p class="measure">{{ entry.field('summary') }}</p>{% endif %}
+            {% if entry.field('route') %}
+                <ol class="roadbook" aria-label="Percorso">
+                    {% for tappa in entry.field('route')|split('\n') %}
+                        {% if tappa|trim %}<li>{{ tappa|trim }}</li>{% endif %}
+                    {% endfor %}
+                </ol>
+            {% endif %}
+            <a class="btn btn--oro" href="{{ entry.field('cta_url') ?: 'mailto:info@nextheritage.ch' }}">Programma &amp; iscrizione</a>
+        </div>
+        <div>
+            <p class="swiss-line">{{ ui.swiss_chip() }} Ticino, Svizzera · Young4Vintage</p>
+            <p style="margin-top:1.4rem;"><a class="tlink" href="/eventi">← Tutti gli eventi</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

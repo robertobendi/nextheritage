@@ -1,17 +1,22 @@
 {% extends '@theme/layout.twig' %}
 
-{% block title %}{{ ok ? 'Thanks' : 'Try again' }} · {{ site.name }}{% endblock %}
+{% block title %}{{ ok ? 'Messaggio inviato' : 'Riprova' }} · {{ site.name }}{% endblock %}
 
 {% block content %}
-<div class="wrap" style="text-align:center;padding:4rem 0;">
-    {% if ok %}
-        <h1>Thanks for getting in touch.</h1>
-        <p class="lede">We received your message.</p>
-    {% else %}
-        <h1>Something went wrong.</h1>
-        <ul style="display:inline-block;text-align:left;">
-            {% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
-        <p style="margin-top:2rem;"><a href="javascript:history.back()">← Go back</a></p>
-    {% endif %}
-</div>
+<section class="sec" style="text-align:center;">
+    <div class="wrap" style="max-width:56ch;">
+        {% if ok %}
+            <p class="kicker" style="justify-content:center;">Grazie</p>
+            <h1 class="display" style="font-size:clamp(2.4rem,5vw,4rem);">Messaggio <em>ricevuto</em></h1>
+            <p class="lede" style="margin:1.4rem auto 0;">Ti ricontattiamo al più presto.</p>
+        {% else %}
+            <p class="kicker" style="justify-content:center;">Qualcosa non va</p>
+            <h1 class="display" style="font-size:clamp(2.4rem,5vw,4rem);">Riprova</h1>
+            <ul style="display:inline-block; text-align:left; margin:1.4rem 0 0;">
+                {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+            </ul>
+            <p style="margin-top:2rem;"><a class="tlink" href="javascript:history.back()">← Torna indietro</a></p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

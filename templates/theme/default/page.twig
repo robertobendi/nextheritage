@@ -4,15 +4,15 @@
 {% block description %}{{ entry.field('meta_description') ?: 'Next Heritage — auto storiche per le nuove generazioni in Ticino.' }}{% endblock %}
 
 {% block content %}
-<section class="section">
-    <article class="wrap">
-        <p class="eyebrow">Next Heritage</p>
-        <div class="bleed">
-            <h1 class="bleed__h">{{ entry.field('title') }}</h1>
-        </div>
-        <div class="lede-block article-body">
-            {{ entry.field('body')|markdown }}
-        </div>
+<section class="sec--sm on-dark">
+    <div class="wrap">
+        <p class="kicker">Next Heritage</p>
+        <h1 class="display">{{ entry.field('title') }}</h1>
+    </div>
+</section>
+<section class="sec">
+    <article class="wrap measure">
+        {{ entry.field('body')|markdown }}
     </article>
 </section>
 {% endblock %}
