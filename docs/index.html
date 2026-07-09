@@ -339,6 +339,18 @@
             opacity: .17; mix-blend-mode: luminosity;
             filter: sepia(.3) contrast(1.05);
         }
+
+        /* veil — faded monochrome car photo behind any dark hero band */
+        .veil { position: relative; overflow: clip; }
+        .veil::before {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background:
+                linear-gradient(to bottom, rgba(14,36,26,.5), rgba(14,36,26,.08) 45%, rgba(14,36,26,.8)),
+                var(--veil-img) var(--veil-pos, center 42%) / cover no-repeat;
+            opacity: .14; mix-blend-mode: luminosity;
+            filter: sepia(.3) contrast(1.06);
+        }
+        .veil > .wrap { position: relative; }
         .hero-inner { position: relative; display: grid; grid-template-columns: 1.15fr .95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(4rem, 9vw, 7.5rem) clamp(4.5rem, 10vw, 8rem); }
         .hero-inner > * { min-width: 0; }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
