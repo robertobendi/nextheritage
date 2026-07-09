@@ -47,6 +47,12 @@
                     <img src="/uploads/controluce.jpg" alt="Coda di una sportiva storica rossa in controluce, al sole di un raduno in Ticino" width="640" height="800" loading="eager" fetchpriority="high" decoding="async">
                 </div>
             </figure>
+            <figure class="coach hero-polaroid">
+                <div class="ph ph--tint" style="aspect-ratio:4/3;">
+                    <img src="/uploads/giovani-alpi.jpg" alt="Il gruppo dei giovani soci sorridenti tra le auto storiche a un raduno alpino" width="480" height="360" loading="eager" decoding="async">
+                </div>
+                <figcaption>Noi · in raduno</figcaption>
+            </figure>
             <span class="plate-tag">Dai nostri raduni · Ticino</span>
         </div>
     </div>
@@ -61,6 +67,21 @@
         </ul>
     </div>
 </section>
+
+{{ ui.reel([
+    { f: 'gruppo-winteler', alt: 'Il gruppo dei soci davanti alla sede Winteler' },
+    { f: 'passo-alpino', alt: 'Due soci con una buggy rossa e le Alpi sullo sfondo' },
+    { f: 'trio-fulvia', alt: 'Tre giovani soci tra una Lancia Fulvia e una Dino' },
+    { f: 'gt40', alt: 'Ford GT40 in livrea Gulf' },
+    { f: 'giovani-alpi', alt: 'I giovani soci a un raduno alpino' },
+    { f: 'roadbook', alt: 'Equipaggio in abitacolo con il roadbook' },
+    { f: 'garage-solca', alt: 'I soci in visita al Garage Solcà' },
+    { f: 'schieramento', alt: 'Schieramento di fuoriserie storiche italiane' },
+    { f: 'paddock', alt: 'Il paddock di una cronoscalata' },
+    { f: 'museo', alt: 'Vettura da corsa a telaio scoperto in museo' },
+    { f: 'raduno-cars', alt: 'Auto storiche e da rally a un raduno' },
+    { f: 'controluce', alt: 'Sportiva storica rossa in controluce' }
+]) }}
 
 <section class="sec">
     <div class="wrap cols-2">
@@ -132,29 +153,43 @@
 
 <section class="sec on-dark">
     <div class="wrap">
-        <p class="kicker reveal">Vita associativa</p>
-        <h2 class="reveal" style="margin-bottom:2.8rem;">Dagli eventi,<br><em>non dagli archivi</em></h2>
-        <div class="cols-3">
-            <figure class="coach reveal" style="background:var(--pino-2);">
-                <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="/uploads/passo-alpino.jpg" alt="Due soci accanto a una buggy rossa d'epoca con le Alpi sullo sfondo" width="480" height="320" loading="lazy">
-                </div>
-                <figcaption>Aria di montagna · paddock alpino</figcaption>
-            </figure>
-            <figure class="coach reveal" style="background:var(--pino-2);">
-                <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="/uploads/schieramento.jpg" alt="Schieramento di fuoriserie storiche italiane a un raduno Young4Vintage" width="480" height="320" loading="lazy">
-                </div>
-                <figcaption>Fuoriserie italiane · pronte al via</figcaption>
-            </figure>
-            <figure class="coach reveal" style="background:var(--pino-2);">
-                <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="/uploads/giovani-alpi.jpg" alt="Il gruppo dei giovani soci tra le auto storiche a un raduno alpino" width="480" height="320" loading="lazy">
-                </div>
-                <figcaption>La nuova generazione · in raduno</figcaption>
-            </figure>
+        <div class="cols-2" style="align-items:end; margin-bottom:3rem;">
+            <div class="reveal">
+                <p class="kicker">Siamo noi</p>
+                <h2>Facce, benzina<br>e <em>domeniche piene</em></h2>
+            </div>
+            <p class="lede reveal">Non siamo un club di teche e guanti bianchi: siamo un gruppo di giovani che le auto storiche le guida, le ripara e se le racconta. Queste facce le trovi a ogni evento.</p>
         </div>
-        <p class="reveal" style="margin:2.4rem 0 0;"><a class="tlink" href="/missione#galleria">Sfoglia la galleria</a></p>
+        <figure class="coach reveal" style="background:var(--pino-2);">
+            <div class="ph ph--tint" style="aspect-ratio:21/9;">
+                <img src="/uploads/gruppo-winteler.jpg" alt="Otto soci di Next Heritage in gruppo, sorridenti, davanti alla sede di un raduno" width="1200" height="514" loading="lazy">
+            </div>
+            <figcaption>Il gruppo al completo · trasferta di primavera</figcaption>
+        </figure>
+        <div class="voci" style="margin-top:3.4rem;">
+            <article class="voce reveal">
+                <div class="ph ph--tint">
+                    <img src="/uploads/socio-irene.jpg" alt="Ritratto di Irene Balestra" width="480" height="576" loading="lazy">
+                </div>
+                <blockquote>La passione per i motori è sempre stata di casa nella mia vita, grazie a mio papà. Vedere questo progetto prendere forma insieme a persone che condividono la stessa passione è qualcosa di speciale.</blockquote>
+                <cite>Irene Balestra · Next Heritage</cite>
+            </article>
+            <article class="voce reveal">
+                <div class="ph ph--tint">
+                    <img src="/uploads/socio-hermes.jpg" alt="Ritratto di Hermès Ammon" width="480" height="576" loading="lazy">
+                </div>
+                <blockquote>Fin da bambino il rombo dei motori ha accompagnato le mie giornate. Oggi ogni dettaglio, ogni progetto, ogni sorriso condiviso è un tassello di un sogno che prende vita.</blockquote>
+                <cite>Hermès Ammon · Next Heritage</cite>
+            </article>
+            <article class="voce reveal">
+                <div class="ph ph--tint">
+                    <img src="/uploads/socio-malyk.jpg" alt="Ritratto di Malyk Lombardi" width="480" height="576" loading="lazy" style="object-position:50% 30%;">
+                </div>
+                <blockquote>Per me i motori hanno sempre avuto una voce. Trasformo ricordi in esperienze, tecnica in emozione, e ogni progetto in qualcosa che va oltre la macchina.</blockquote>
+                <cite>Malyk Lombardi · Next Heritage</cite>
+            </article>
+        </div>
+        <p class="reveal" style="margin:3rem 0 0;"><a class="tlink" href="/missione#galleria">Sfoglia la galleria</a></p>
     </div>
 </section>
 

@@ -329,12 +329,92 @@
             .reveal.is-in { opacity: 1; transform: none; }
         }
 
+        /* photo life — slow zoom on hover */
+        .ph img { transition: transform .9s cubic-bezier(.2,.65,.2,1); }
+        figure:hover .ph img, .voce:hover .ph img { transform: scale(1.045); }
+        @media (prefers-reduced-motion: reduce) { .ph img { transition: none; } figure:hover .ph img { transform: none; } }
+
+        /* hero polaroid — second frame with faces, overlapping */
+        .hero-polaroid {
+            position: absolute; right: clamp(-1.5rem, -3vw, -2.5rem); bottom: -3rem; width: 52%; z-index: 3;
+            transform: rotate(3.5deg);
+            transition: transform .4s ease;
+        }
+        .hero-polaroid:hover { transform: rotate(1deg) translateY(-4px); }
+        .hero-polaroid figcaption { background: var(--bianco-caldo); color: var(--inchiostro-2); padding: .6rem .2rem .2rem; }
+        .hero-polaroid.coach { box-shadow: 0 30px 70px -30px rgba(0,0,0,.85); }
+
+        /* ---------- Film reel marquee ---------- */
+        .reel {
+            background: var(--pino); overflow: hidden; position: relative;
+            padding: 2.3rem 0; border-block: 1px solid rgba(201,164,92,.35);
+        }
+        .reel::before, .reel::after {
+            content: ""; position: absolute; left: 0; right: 0; height: .8rem; z-index: 2;
+            background: repeating-linear-gradient(90deg,
+                transparent 0 .55rem, rgba(201,164,92,.45) .55rem 1.35rem, transparent 1.35rem 1.9rem);
+        }
+        .reel::before { top: .7rem; }
+        .reel::after { bottom: .7rem; }
+        .reel-track { display: flex; width: max-content; animation: reel-run 70s linear infinite; }
+        .reel--reverse .reel-track { animation-direction: reverse; }
+        .reel:hover .reel-track { animation-play-state: paused; }
+        .reel-set { display: flex; flex: none; }
+        .reel-set figure { flex: none; margin-right: 1.1rem; border: 1px solid rgba(201,164,92,.5); background: var(--pino-2); padding: .35rem; }
+        .reel-set img {
+            height: clamp(150px, 24vw, 235px); width: auto; display: block;
+            filter: sepia(.22) saturate(.9) contrast(1.02);
+        }
+        @keyframes reel-run { to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) {
+            .reel { overflow-x: auto; }
+            .reel-track { animation: none; }
+        }
+
+        /* ---------- Le voci — member portrait cards ---------- */
+        .voci { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.8rem, 4vw, 3rem); align-items: start; }
+        .voce {
+            border: 1px solid var(--oro); background: var(--bianco-caldo); padding: .5rem;
+            box-shadow: 0 28px 60px -34px rgba(0,0,0,.75);
+            transform: rotate(-1.1deg); transition: transform .4s ease, box-shadow .4s ease;
+        }
+        .voce:nth-child(2) { transform: rotate(1deg); margin-top: 2.6rem; }
+        .voce:nth-child(3) { transform: rotate(-.5deg); margin-top: 1.1rem; }
+        .voce:hover { transform: rotate(0deg) translateY(-6px); box-shadow: 0 40px 80px -34px rgba(0,0,0,.85); }
+        .voce .ph { border: 1px solid rgba(143,114,49,.55); overflow: hidden; line-height: 0; background: var(--pino); aspect-ratio: 3/3.6; }
+        .voce img { width: 100%; height: 100%; object-fit: cover; }
+        .voce blockquote {
+            margin: 0; padding: 1.3rem 1.2rem .4rem;
+            font-style: italic; font-size: 1.02rem; line-height: 1.55; color: var(--inchiostro);
+        }
+        .voce blockquote::before { content: "«"; color: var(--oro-cupo); font-family: var(--f-display); font-size: 1.6rem; line-height: 0; vertical-align: -.35rem; margin-right: .15rem; }
+        .voce cite {
+            display: block; font-style: normal; padding: .6rem 1.2rem 1rem;
+            font-family: var(--f-mono); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--oro-cupo);
+        }
+        @media (prefers-reduced-motion: reduce) { .voce, .voce:nth-child(2), .voce:nth-child(3) { transform: none; margin-top: 0; } }
+
+        /* ---------- Photo wall — pinned prints ---------- */
+        .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.6rem, 3.5vw, 2.6rem); }
+        .wall > figure { transition: transform .4s ease; }
+        @media (prefers-reduced-motion: no-preference) {
+            .wall > figure:nth-child(3n+1) { transform: rotate(-1deg); }
+            .wall > figure:nth-child(3n+2) { transform: rotate(.9deg) translateY(.7rem); }
+            .wall > figure:nth-child(3n)   { transform: rotate(-.4deg); }
+            .wall > figure:hover { transform: rotate(0deg) scale(1.03); z-index: 2; position: relative; }
+        }
+
         /* ---------- Responsive ---------- */
         @media (max-width: 920px) {
             .hero-inner, .cols-2, .cols-text, .plate, .member-cards { grid-template-columns: 1fr; }
             .plate--flip .plate-media { order: 0; }
             .cols-3 { grid-template-columns: 1fr; gap: 2.4rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .voci { grid-template-columns: 1fr; }
+            .voce:nth-child(2), .voce:nth-child(3) { margin-top: 0; }
+            .wall { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+            .hero-media { margin-bottom: 3.5rem; }
+            .hero-polaroid { width: 46%; right: 0; bottom: -2.6rem; }
         }
         @media (max-width: 720px) {
             .form-row { grid-template-columns: 1fr; }
@@ -428,19 +508,31 @@
 <section class="sec on-dark" id="galleria">
     <div class="wrap">
         <p class="kicker reveal">Galleria</p>
-        <h2 class="reveal" style="margin-bottom:2.8rem;">Capolavori su ruote<br>che <em>raccontano il tempo</em></h2>
-        <div class="cols-3">
+        <h2 class="reveal" style="margin-bottom:2.8rem;">Le persone, i motori,<br>le <em>domeniche insieme</em></h2>
+        <div class="wall">
             <figure class="coach reveal" style="background:var(--pino-2);">
                 <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="uploads/museo.jpg" alt="Vettura da corsa d'epoca a telaio scoperto esposta in un museo, durante una visita del gruppo" width="480" height="320" loading="lazy">
+                    <img src="uploads/garage-solca.jpg" alt="I soci in gruppo davanti al Garage A. Solcà durante una visita" width="480" height="320" loading="lazy">
                 </div>
-                <figcaption>In museo · l'anatomia di una corsa</figcaption>
+                <figcaption>In visita · Garage Solcà</figcaption>
             </figure>
             <figure class="coach reveal" style="background:var(--pino-2);">
                 <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="uploads/officina.jpg" alt="Due giovani soci in officina accanto a un veicolo storico sul ponte" width="480" height="320" loading="lazy">
+                    <img src="uploads/officina-gruppo.jpg" alt="Quattro soci in officina attorno a un veicolo storico sul ponte" width="480" height="320" loading="lazy">
                 </div>
                 <figcaption>In officina · le mani sulla storia</figcaption>
+            </figure>
+            <figure class="coach reveal" style="background:var(--pino-2);">
+                <div class="ph ph--tint" style="aspect-ratio:3/2;">
+                    <img src="uploads/trio-fulvia.jpg" alt="Tre giovani soci sorridenti tra una Lancia Fulvia e una Dino" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>Tra una Fulvia e una Dino</figcaption>
+            </figure>
+            <figure class="coach reveal" style="background:var(--pino-2);">
+                <div class="ph ph--tint" style="aspect-ratio:3/2;">
+                    <img src="uploads/museo-gruppo.jpg" alt="I soci in visita a un museo dell'automobile, seduti tra le installazioni" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>In museo · gita del gruppo</figcaption>
             </figure>
             <figure class="coach reveal" style="background:var(--pino-2);">
                 <div class="ph ph--tint" style="aspect-ratio:3/2;">
@@ -456,15 +548,21 @@
             </figure>
             <figure class="coach reveal" style="background:var(--pino-2);">
                 <div class="ph ph--tint" style="aspect-ratio:3/2;">
+                    <img src="uploads/museo.jpg" alt="Vettura da corsa d'epoca a telaio scoperto esposta in un museo" width="480" height="320" loading="lazy">
+                </div>
+                <figcaption>In museo · l'anatomia di una corsa</figcaption>
+            </figure>
+            <figure class="coach reveal" style="background:var(--pino-2);">
+                <div class="ph ph--tint" style="aspect-ratio:3/2;">
                     <img src="uploads/controluce.jpg" alt="Sportiva storica rossa in controluce al sole di un raduno" width="480" height="320" loading="lazy">
                 </div>
                 <figcaption>Controluce · fine giornata</figcaption>
             </figure>
             <figure class="coach reveal" style="background:var(--pino-2);">
                 <div class="ph ph--tint" style="aspect-ratio:3/2;">
-                    <img src="uploads/ceresio.jpg" alt="Veduta storica del Lago di Lugano a Porto Ceresio, teatro dei nostri eventi" width="480" height="320" loading="lazy">
+                    <img src="uploads/passo-alpino.jpg" alt="Due soci accanto a una buggy rossa d'epoca con le Alpi sullo sfondo" width="480" height="320" loading="lazy">
                 </div>
-                <figcaption>Ceresio · le nostre strade</figcaption>
+                <figcaption>Aria di montagna · paddock alpino</figcaption>
             </figure>
         </div>
     </div>

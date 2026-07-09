@@ -1,1 +1,15 @@
 {% macro swiss_chip() %}<svg class="swiss-chip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="3" fill="#9d3227"/><rect x="10.4" y="5" width="3.2" height="14" fill="#fdfbf4"/><rect x="5" y="10.4" width="14" height="3.2" fill="#fdfbf4"/></svg>{% endmacro %}
+
+{% macro reel(photos, reverse = false) %}
+<div class="reel{{ reverse ? ' reel--reverse' : '' }}" aria-label="Pellicola di fotografie dagli eventi Next Heritage">
+    <div class="reel-track">
+        {% for set in 0..1 %}
+        <div class="reel-set"{% if set == 1 %} aria-hidden="true"{% endif %}>
+            {% for p in photos %}
+            <figure><img src="/uploads/reel-{{ p.f }}.jpg" alt="{{ set == 0 ? p.alt : '' }}" height="235" loading="lazy" decoding="async"></figure>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
