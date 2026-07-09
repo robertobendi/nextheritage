@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/</loc>
+    <loc>http://127.0.0.1:8765/</loc>
   </url>
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/eventi</loc>
+    <loc>http://127.0.0.1:8765/eventi</loc>
   </url>
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/missione</loc>
+    <loc>http://127.0.0.1:8765/missione</loc>
   </url>
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/diventa-socio</loc>
+    <loc>http://127.0.0.1:8765/diventa-socio</loc>
   </url>
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/contatti</loc>
+    <loc>http://127.0.0.1:8765/contatti</loc>
   </url>
   <url>
-    <loc>https://robertobendi.github.io/nextheritage/404</loc>
+    <loc>http://127.0.0.1:8765/404</loc>
   </url>
 </urlset>
